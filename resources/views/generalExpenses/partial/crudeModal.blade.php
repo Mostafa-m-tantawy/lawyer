@@ -7,25 +7,27 @@
                 @csrf
                 @method('put')
                 <div class="modal-header">
-                    <h5 class="modal-title"> </h5>
+                    <h5 class="modal-title">{{__('Update '.$breadcrumb)}} </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
 
                     <div class="container">
-                        <div class="row pendingAmountdiv">
-                            <div class="col-md-12 col-sm-12">
-                                <h5 >{{__('Pending')}} :  <span class="pendingAmount"></span></h5>
-                            </div>
-                        </div>
-
-
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 percentagediv">
-                                <label>{{__('Percentage')}}</label>
-                                <input type="number"  class="form-control"  name="percentage">
+
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Name')}}</label>
+                                <input  list="names"  type="text"  class="form-control" required name="name" autocomplete="off">
+                                <datalist id="names">
+                                    @foreach($options as $option)
+                                    <option value="{{$option}}">
+                                    @endforeach
+
+                                </datalist>
+
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <label>{{__('Amount')}}</label>
@@ -47,7 +49,10 @@
                                 <label>{{__('Note')}}</label>
                                 <textarea class="form-control"  name="note"></textarea>
                             </div>
+
                         </div>
+
+
                     </div>
 
                 </div>
@@ -66,34 +71,30 @@
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog  ">
         <div class="modal-content">
-            <form action="{{route('case.payments.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('general-expenses.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title"><span
+                    <h5 class="modal-title">{{__('New '.$breadcrumb)}} <span
                             class="model_type"></span></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
+
                 <div class="modal-body">
-                    <input type="hidden" name="type">
-                    <input type="hidden"  value="{{$case->id}}" required name="court_case_id">
+                    <input type="hidden"   name="type">
 
                     <div class="container">
-                        <div class="row pendingAmountdiv">
-                            <div class="col-md-12 col-sm-12">
-                                <h5 >{{__('Pending')}} : <span class="pendingAmount"></span></h5>
-
-                            </div>
-
-                        </div>
-
                         <div class="row">
-
-                            <div class="col-md-12 col-sm-12 percentagediv">
-                                <label>{{__('Percentage')}}</label>
-                                <input type="number"  class="form-control"  name="percentage">
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Name')}}</label>
+                                <input  list="storenames"  type="text"  class="form-control" required name="name" autocomplete="off">
+                                <datalist id="storenames">
+                                    @foreach($options as $option)
+                                        <option value="{{$option}}">
+                                    @endforeach
+                                </datalist>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <label>{{__('Amount')}}</label>
@@ -116,8 +117,6 @@
                                 <textarea class="form-control"  name="note"></textarea>
                             </div>
                         </div>
-
-
                     </div>
 
                 </div>

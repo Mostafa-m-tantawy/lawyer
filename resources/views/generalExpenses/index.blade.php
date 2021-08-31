@@ -1,4 +1,4 @@
-@extends('layouts.vertical', ['title' => __('Clients')])
+@extends('layouts.vertical', ['title' => __($breadcrumb)])
 @section('styles')
 @endsection
 
@@ -20,7 +20,7 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">{{__('admin')}}</a></li>
                             <li class="breadcrumb-item"><a
-                                    href="javascript: void(0);"> {{__('Clients')}}</a></li>
+                                    href="javascript: void(0);"> {{__($breadcrumb)}}</a></li>
                             <li class="breadcrumb-item active">{{__('index')}}</li>
                         </ol>
                     </div>
@@ -52,14 +52,13 @@
 
                                     <thead class="thead-light">
                             <tr>
-
                                 <th>{{__('ID')}}</th>
+                                <th>{{__('User')}}</th>
                                 <th>{{__('Name')}}</th>
-                                <th>{{__('Email')}}</th>
-                                <th>{{__('Phone')}}</th>
-                                <th>{{__('Address')}}</th>
-                                <th>{{__('National ID')}}</th>
-                                <th>{{__('Passport ID')}}</th>
+                                <th>{{__('Amount')}}</th>
+                                <th>{{__('Payment Method')}}</th>
+                                <th>{{__('Payment Date')}}</th>
+                                <th>{{__('Note')}}</th>
                                 <th style="width: 250px;">{{__('actions')}}</th>
                             </tr>
                             </thead>
@@ -67,46 +66,38 @@
                             @foreach($data as $item)
                                 {{----}}
                                 <tr>
-
                                     <td>{{$item->id}}</td>
+                                    <td>{{$item->user->name}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->email}}</td>
-                                    <td>{{$item->phone}}</td>
-                                    <td>{{$item->address}}</td>
-                                    <td>{{$item->national_id}}</td>
-                                    <td>{{$item->passport_id}}</td>
-                                    <td>
-                                        <a  class="btn btn-primary"
-                                           href="{{route('clients.show',[$item->id])}}">
-                                            {{__('View')}}
-                                        </a>
+                                    <td>{{$item->amount}}</td>
+                                    <td>{{$item->payment_method}}</td>
+                                    <td>{{$item->payment_date}}</td>
+                                    <td>{{$item->note}}</td> <td>
                                         <a title="update" class="btn btn-info"
                                            data-toggle="modal" data-target=".updateModel"
                                            data-data="{{$item}}"
-                                           data-url="{{route('clients.update',[$item->id])}}"
+                                           data-url="{{route('general-expenses.update',[$item->id])}}"
                                         >
                                             {{__('Edit')}}
                                         </a>
                                         <form style="display: inline" method="post"
-                                              action="{{route('clients.destroy',[$item->id])}}">
+                                              action="{{route('general-expenses.destroy',[$item->id])}}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger"> {{__('delete')}}</button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach
 
 
                             </tbody>
-                                </table>
+                        </table>
 
                                 @if($data->count()==0)
                                     <h5 class="text-center">{{__('There is no data in this table!')}}</h5>
                                 @endif
                             </div>
-
                             {{$data->links()}}
 
                     </div>
@@ -117,9 +108,9 @@
     </div>
 
     </div>
-@include('.clients.partial.crudeModal')
+@include('.generalExpenses.partial.crudeModal')
 
 @endsection
 @section('script')
-    @include('.clients.partial.scripts')
+    @include('.generalExpenses.partial.scripts')
 @endsection

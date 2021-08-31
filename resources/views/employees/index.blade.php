@@ -1,4 +1,4 @@
-@extends('layouts.vertical', ['title' => __('Clients')])
+@extends('layouts.vertical', ['title' => __('Employees')])
 @section('styles')
 @endsection
 
@@ -20,7 +20,7 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">{{__('admin')}}</a></li>
                             <li class="breadcrumb-item"><a
-                                    href="javascript: void(0);"> {{__('Clients')}}</a></li>
+                                    href="javascript: void(0);"> {{__('Employees')}}</a></li>
                             <li class="breadcrumb-item active">{{__('index')}}</li>
                         </ol>
                     </div>
@@ -60,6 +60,10 @@
                                 <th>{{__('Address')}}</th>
                                 <th>{{__('National ID')}}</th>
                                 <th>{{__('Passport ID')}}</th>
+                                <th>{{__('Profession ID')}}</th>
+                                <th>{{__('Profession')}}</th>
+                                <th>{{__('Starting date')}}</th>
+                                <th>{{__('Salary')}}</th>
                                 <th style="width: 250px;">{{__('actions')}}</th>
                             </tr>
                             </thead>
@@ -75,20 +79,25 @@
                                     <td>{{$item->address}}</td>
                                     <td>{{$item->national_id}}</td>
                                     <td>{{$item->passport_id}}</td>
+
+                                    <td>{{$item->profession_id}}</td>
+                                    <td>{{$item->profession}}</td>
+                                    <td>{{$item->starting_date}}</td>
+                                    <td>{{$item->salary}}</td>
                                     <td>
                                         <a  class="btn btn-primary"
-                                           href="{{route('clients.show',[$item->id])}}">
+                                           href="{{route('employees.show',[$item->id])}}">
                                             {{__('View')}}
                                         </a>
                                         <a title="update" class="btn btn-info"
                                            data-toggle="modal" data-target=".updateModel"
                                            data-data="{{$item}}"
-                                           data-url="{{route('clients.update',[$item->id])}}"
+                                           data-url="{{route('employees.update',[$item->id])}}"
                                         >
                                             {{__('Edit')}}
                                         </a>
                                         <form style="display: inline" method="post"
-                                              action="{{route('clients.destroy',[$item->id])}}">
+                                              action="{{route('employees.destroy',[$item->id])}}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger"> {{__('delete')}}</button>
@@ -117,9 +126,9 @@
     </div>
 
     </div>
-@include('.clients.partial.crudeModal')
+@include('.employees.partial.crudeModal')
 
 @endsection
 @section('script')
-    @include('.clients.partial.scripts')
+    @include('.employees.partial.scripts')
 @endsection

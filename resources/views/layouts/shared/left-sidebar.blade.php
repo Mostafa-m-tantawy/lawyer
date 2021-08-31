@@ -1,4 +1,8 @@
 <!-- ========== Left Sidebar Start ========== -->
+<style>
+    #sidebar-menu > ul > li > a {
+        padding: 5px 10px !important;}
+</style>
 <div class="left-side-menu">
 
     <div class="h-100" data-simplebar>
@@ -50,7 +54,7 @@
 
                 <li>
                     <a href="{{route('dashboard')}}">
-                        <i data-feather="rss"></i>
+                        <i data-feather="airplay"></i>
                         <span> {{__('Dashboard')}} </span>
                     </a>
                 </li>
@@ -62,24 +66,75 @@
                 </li>
                 <li>
                     <a href="{{route('clients.index')}}">
-                        <i data-feather="rss"></i>
+                        <i data-feather="users"></i>
                         <span>  {{__('Clients')}} </span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('courts.index')}}">
-                        <i data-feather="rss"></i>
+                        <i data-feather="briefcase"></i>
                         <span>  {{__('Courts')}} </span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('services.index')}}">
-                        <i data-feather="rss"></i>
+                        <i data-feather="book-open"></i>
                         <span>  {{__('Services')}} </span>
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('employees.index')}}">
+                        <i data-feather="user-check"></i>
+                        <span>  {{__('Employees')}} </span>
+                    </a>
+                </li>
+                <li class="menu-title mt-2">{{__('General Expenses')}}</li>
+
+                <li>
+                    <a href="{{route('general-expenses.show',['Assets'])}}">
+                        <i data-feather="shopping-cart"></i>
+                        <span>  {{__('Assets')}} </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('general-expenses.show',['Maintenances'])}}">
+                        <i data-feather="zap"></i>
+                        <span>  {{__('Maintenances')}} </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('general-expenses.show',['Expenses'])}}">
+                        <i data-feather="truck"></i>
+                        <span>  {{__('Expenses')}} </span>
+                    </a>
+                </li>
+                <li class="menu-title mt-2">{{__('Reports')}}</li>
+                <li>
+                    <a href="{{route('reports.salaries')}}">
+                        <i data-feather="truck"></i>
+                        <span>  {{__('Salaries')}} </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('reports.generalExpenses')}}">
+                        <i data-feather="truck"></i>
+                        <span>  {{__('General Expenses')}} </span>
+                    </a>
+                </li>
+  <li>
+                    <a href="{{route('reports.cases')}}">
+                        <i data-feather="truck"></i>
+                        <span>  {{__('Cases')}} </span>
+                    </a>
+                </li>
+  <li>
+                    <a href="{{route('reports.casePayments')}}">
+                        <i data-feather="truck"></i>
+                        <span>  {{__('Case Payments')}} </span>
+                    </a>
+                </li>
 
 
             </ul>

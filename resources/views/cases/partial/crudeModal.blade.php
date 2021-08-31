@@ -12,7 +12,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <input type="hidden" name="type" value="service">
+
                 <div class="modal-body">
 
                     <div class="container">
@@ -71,7 +71,7 @@
                     </button>
                 </div>
 
-                <input type="hidden" name="type" value="service">
+
                 <div class="modal-body">
                     <input type="hidden" class="form-control" value="{{$client->id}}" required name="client_id">
 

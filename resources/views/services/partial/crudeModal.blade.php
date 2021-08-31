@@ -12,7 +12,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <input type="hidden" name="type" value="service">
+
                 <div class="modal-body">
 
                     <div class="container">
@@ -53,7 +53,7 @@
                     </button>
                 </div>
 
-                <input type="hidden" name="type" value="service">
+
                 <div class="modal-body">
 
                     <div class="container">

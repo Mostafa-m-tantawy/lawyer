@@ -56,7 +56,7 @@
                                         <th>{{__('Name')}}</th>
                                         <th>{{__('Specialty')}}</th>
                                         <th>{{__('Address')}}</th>
-                                        <th>{{__('actions')}}</th>
+                                        <th style="width: 250px;">{{__('actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>

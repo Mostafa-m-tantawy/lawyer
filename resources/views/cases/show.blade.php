@@ -112,7 +112,7 @@
                                         <th>{{__('Payment Method')}}</th>
                                         <th>{{__('Payment Date')}}</th>
                                         <th>{{__('Note')}}</th>
-                                        <th>{{__('actions')}}</th>
+                                        <th style="width: 250px;">{{__('actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -199,7 +199,7 @@
                                         <th>{{__('Payment Method')}}</th>
                                         <th>{{__('Payment Date')}}</th>
                                         <th>{{__('Note')}}</th>
-                                        <th>{{__('actions')}}</th>
+                                        <th style="width: 250px;">{{__('actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -275,11 +275,12 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th>{{__('ID')}}</th>
+                                        <th>{{__('Percentage')}}</th>
                                         <th>{{__('Amount')}}</th>
                                         <th>{{__('Payment Method')}}</th>
                                         <th>{{__('Payment Date')}}</th>
                                         <th>{{__('Note')}}</th>
-                                        <th>{{__('actions')}}</th>
+                                        <th style="width: 250px;">{{__('actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -288,6 +289,7 @@
                                         <tr>
 
                                             <td>{{$payment->id}}</td>
+                                            <td>{{$payment->percentage}}%</td>
                                             <td>{{$payment->amount}}</td>
                                             <td>{{$payment->payment_method}}</td>
                                             <td>{{$payment->payment_date}}</td>

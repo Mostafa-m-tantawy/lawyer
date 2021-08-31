@@ -55,7 +55,7 @@
                                 <th>{{__('ID')}}</th>
                                 <th>{{__('Name')}}</th>
                                 <th>{{__('Email')}}</th>
-                                <th>{{__('actions')}}</th>
+                                <th style="width: 250px;">{{__('actions')}}</th>
                             </tr>
                             </thead>
                             <tbody>

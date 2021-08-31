@@ -7,12 +7,11 @@
                 @csrf
                 @method('put')
                 <div class="modal-header">
-                    <h5 class="modal-title">{{__('Update Client')}} </h5>
+                    <h5 class="modal-title">{{__('Update Employee')}} </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
 
                     <div class="container">
@@ -50,6 +49,24 @@
                                 <input type="text" class="form-control" name="passport_id">
                             </div>
 
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Profession')}}</label>
+                                <input type="text" class="form-control" name="profession">
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Profession ID')}}</label>
+                                <input type="text" class="form-control" name="profession_id">
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Starting Date')}}</label>
+                                <input type="date" class="form-control" name="starting_date">
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Salary')}}</label>
+                                <input type="number" step="0.01" class="form-control" name="salary">
+                            </div>
                         </div>
 
 
@@ -71,10 +88,10 @@
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog  ">
         <div class="modal-content">
-            <form action="{{route('clients.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('employees.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title">{{__('New Client')}} <span
+                    <h5 class="modal-title">{{__('New Employee')}} <span
                             class="model_type"></span></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -117,7 +134,24 @@
                                 <label>{{__('Passport ID')}}</label>
                                 <input type="text" class="form-control" name="passport_id">
                             </div>
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Profession')}}</label>
+                                <input type="text" class="form-control" name="profession">
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Profession ID')}}</label>
+                                <input type="text" class="form-control" name="profession_id">
+                            </div>
 
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Starting Date')}}</label>
+                                <input type="date" class="form-control" name="starting_date">
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label>{{__('Salary')}}</label>
+                                <input type="number" step="0.01" class="form-control" name="salary">
+                            </div>
                         </div>
 
 

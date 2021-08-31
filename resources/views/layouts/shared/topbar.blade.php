@@ -25,17 +25,31 @@
 
             <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset('assets/images/flags/us.jpg')}}" alt="user-image" height="16">
+                    @if (App::isLocale('ar'))
+                        <img src="{{asset('assets/images/008-saudi-arabia.svg')}}" class="mr-2" height="12" alt=""/> العربية <span class="mdi mdi-chevron-down"></span>
+                    @else
+                        <img src="{{asset('assets/images/flags/us.jpg')}}" class="mr-2" height="12" alt=""/> English <span class="mdi mdi-chevron-down"></span>
+                    @endif
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="{{asset('assets/images/flags/germany.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
-                    </a>
+                    @if (App::isLocale('ar'))
+                        <a class="dropdown-item" href="{{route('chang-lang',['lang'=>'en'])}}">
+                            <img src="{{asset('assets/images/flags/us.jpg')}}"  class="mr-1"  alt="" height="16" />
+                            <span> English </span>
+                        </a>
+                    @else
+                        <a class="dropdown-item" href="{{route('chang-lang',['lang'=>'ar'])}}">
+                            <img src="{{asset('assets/images/flags/008-saudi-arabia.svg')}}" class="mr-1"   alt="" height="16" />
+                            <span> العربية </span>
+                        </a>
+                    @endif
 
                 </div>
             </li>
+
+
 
 
             <li class="dropdown notification-list topbar-dropdown">

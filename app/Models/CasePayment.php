@@ -9,4 +9,8 @@ class CasePayment extends Model
 {
     use HasFactory;
     protected $fillable=['court_case_id','name','amount','type','payment_method','payment_date','percentage','note'];
+
+    public function case(){
+        return $this->belongsTo(CourtCase::class , 'court_case_id');
+    }
 }

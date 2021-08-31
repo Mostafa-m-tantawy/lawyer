@@ -30,7 +30,11 @@ class AlterCourtCasesCalculatedColomns extends Migration
     public function down()
     {
         Schema::table('court_cases', function (Blueprint $table) {
-            //
+            $table->dropColumn('total_paid');
+            $table->dropColumn('total_expenses');
+            $table->dropColumn('total_pending');
+            $table->dropColumn('total_commission');
+
         });
     }
 }

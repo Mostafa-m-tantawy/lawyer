@@ -137,7 +137,7 @@
                                         <th>{{__('Pending')}}</th>
                                         <th>{{__('Expenses')}}</th>
                                         <th>{{__('Commission')}}</th>
-                                        <th>{{__('actions')}}</th>
+                                        <th style="width: 250px;">{{__('actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -179,7 +179,7 @@
                                     </tbody>
                                 </table>
 
-                                @if($client->cases->count()==0)
+                                @if($cases->count()==0)
                                     <h5 class="text-center">{{__('There is no data in this table!')}}</h5>
                                 @endif
                             </div>
