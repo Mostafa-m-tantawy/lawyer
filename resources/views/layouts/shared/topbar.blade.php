@@ -97,21 +97,21 @@
         <div class="logo-box">
             <a href="{{route('dashboard')}}" class="logo logo-dark text-center">
                 <span class="logo-sm">
-                    <img src="{{asset('assets/images/logo-sm.png')}}"alt="" height="22">
+                    <img src="{{asset('assets/images/icon.png')}}"alt="" height="40">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-lg">
-                    <img src="{{asset('assets/images/logo-dark.png')}}"alt="" height="20">
+                    <img src="{{asset('assets/images/logo.png')}}"alt="" height="80">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
 
             <a href="{{route('dashboard')}}" class="logo logo-light text-center">
                 <span class="logo-sm">
-                    <img src="{{asset('assets/images/logo-sm.png')}}"alt="" height="22">
+                    <img src="{{asset('assets/images/icon.png')}}"alt="" height="40">
                 </span>
                 <span class="logo-lg">
-                    <img src="{{asset('assets/images/logo-light.png')}}"alt="" height="20">
+                    <img src="{{asset('assets/images/logo.png')}}"alt="" height="80">
                 </span>
             </a>
         </div>

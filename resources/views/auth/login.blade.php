@@ -20,13 +20,13 @@
                                     <div class="auth-logo">
                                         <a href="{{route('dashboard')}}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-                                                <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="22">
+                                                <img src="{{asset('assets/images/logo.png')}}" alt="" height="100">
                                             </span>
                                         </a>
 
                                         <a href="{{route('dashboard')}}" class="logo logo-light text-center">
                                             <span class="logo-lg">
-                                                <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="22">
+                                                <img src="{{asset('assets/images/logo.png')}}" alt="" height="100">
                                             </span>
                                         </a>
                                     </div>
@@ -40,7 +40,7 @@
                                         <label for="emailaddress"> {{ __('Email address') }}</label>
                                         <input class="form-control  @if($errors->has('email')) is-invalid @endif" name="email" type="email"
                                             id="emailaddress" required=""
-                                            value="{{ old('email')}}"
+                                            value="{{ old('email','demo@lawyer.com')}}"
                                             placeholder="{{ __('Enter your email') }}" />
 
                                             @if($errors->has('email'))
@@ -55,7 +55,7 @@
                                         <label for="password">   {{ __('Password') }}</label>
                                         <div class="input-group input-group-merge @if($errors->has('password')) is-invalid @endif">
                                             <input class="form-control @if($errors->has('password')) is-invalid @endif" name="password" type="password" required=""
-                                                id="password" placeholder="{{ __('Enter your password') }}" />
+                                              value="123456"  id="password" placeholder="{{ __('Enter your password') }}" />
                                                 <div class="input-group-append" data-password="false">
                                                 <div class="input-group-text">
                                                     <span class="password-eye"></span>
@@ -89,7 +89,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="{{route('password.request')}}" class="text-white-50 ml-1">Forgot your password?</a></p>
+                                <p> <a href="{{route('password.request')}}" class="text-white-50 ml-1">{{ __('Forgot your password?') }}</a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -103,9 +103,7 @@
         <!-- end page -->
 
 
-        <footer class="footer footer-alt">
-            <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
-        </footer>
+
 
         @include('layouts.shared.footer-script')
 
